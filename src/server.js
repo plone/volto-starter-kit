@@ -1,8 +1,12 @@
 import App from './App';
 import React from 'react';
 import { StaticRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
+import serialize from 'serialize-javascript';
+
+import configureStore from './store';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -11,12 +15,21 @@ server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
+    const initialState = {};
+    // Create a new Redux store instance
+    const store = configureStore(initialState);
+
     const context = {};
     const markup = renderToString(
-      <StaticRouter context={context} location={req.url}>
-        <App />
-      </StaticRouter>,
+      <Provider store={store}>
+        <StaticRouter context={context} location={req.url}>
+          <App />
+        </StaticRouter>
+      </Provider>,
     );
+
+    // Grab the initial state from our Redux store
+    const finalState = store.getState();
 
     if (context.url) {
       res.redirect(context.url);
@@ -43,7 +56,10 @@ server
     <body>
         <div id="root">${markup}</div>
     </body>
-</html>`,
+    <script>
+      window.__PRELOADED_STATE__ = ${serialize(finalState)}
+    </script>
+    </html>`,
       );
     }
   });
