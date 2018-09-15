@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
+import { createMemoryHistory } from 'history';
 
 import configureStore from './store';
 
@@ -16,8 +17,12 @@ server
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get('/*', (req, res) => {
     const initialState = {};
+    const history = createMemoryHistory({
+      initialEntries: [req.url],
+    });
+
     // Create a new Redux store instance
-    const store = configureStore(initialState);
+    const store = configureStore(initialState, history);
 
     const context = {};
     const markup = renderToString(
