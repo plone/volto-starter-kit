@@ -1,0 +1,12 @@
+{
+    "presets": [
+      "razzle/babel", // NEEDED
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      ["babel-plugin-root-import", {
+        "rootPathSuffix": "src"
+      }]
+    ]
+}
