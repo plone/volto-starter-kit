@@ -7,6 +7,11 @@ import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { Api, persistAuthToken } from './helpers';
 import { ReduxAsyncConnect } from 'redux-connect';
+import nlLocaleData from 'react-intl/locale-data/nl';
+import deLocaleData from 'react-intl/locale-data/de';
+import enLocaleData from 'react-intl/locale-data/en';
+import { addLocaleData } from 'react-intl';
+
 import routes from './routes';
 
 import 'semantic-ui-less/semantic.less';
@@ -16,6 +21,7 @@ const history = createBrowserHistory();
 const api = new Api();
 
 const store = configureStore(window.__PRELOADED_STATE__, history, api);
+addLocaleData([...nlLocaleData, ...deLocaleData, ...enLocaleData]);
 persistAuthToken(store);
 
 hydrate(
