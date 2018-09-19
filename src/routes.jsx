@@ -49,6 +49,18 @@ const routes = [
         component: Controlpanels,
         routes: [
           {
+            path: '/login',
+            component: Login,
+          },
+          {
+            path: '/logout',
+            component: Logout,
+          },
+          {
+            path: '/search',
+            component: Search,
+          },
+          {
             path: '/controlpanel/moderate-comments',
             component: ModerateComments,
           },
@@ -63,101 +75,88 @@ const routes = [
         ],
       },
       {
-        path: '/login',
-        component: Login,
+        path: '/change-password',
+        component: ChangePassword,
       },
       {
-        path: '/search',
-        component: Search,
+        path: '/personal-information',
+        component: PersonalInformation,
+      },
+      {
+        path: '/personal-preferences',
+        component: PersonalPreferences,
+      },
+      {
+        path: '/add',
+        component: Add,
+      },
+      {
+        path: '/contents',
+        component: Contents,
+      },
+      {
+        path: '/sharing',
+        component: Sharing,
+      },
+      {
+        path: '/**/add',
+        component: Add,
+      },
+      {
+        path: '/**/contents',
+        component: Contents,
+      },
+      {
+        path: '/**/sharing',
+        component: Sharing,
+      },
+      {
+        path: '/**/delete',
+        component: Delete,
+      },
+      {
+        path: '/**/diff',
+        component: Diff,
+      },
+      {
+        path: '/**/edit',
+        component: Edit,
+      },
+      {
+        path: '/**/history',
+        component: History,
+      },
+      {
+        path: '/**/layout',
+        component: Layout,
+      },
+      {
+        path: '/**/sharing',
+        component: Sharing,
+      },
+      {
+        path: '/register',
+        component: Register,
+      },
+      {
+        path: '/password-reset',
+        component: RequestPasswordReset,
+        routes: [
+          {
+            path: '/password-reset/:token',
+            component: PasswordReset,
+          },
+        ],
       },
       {
         path: '/**',
         component: View,
       },
-    ],
-  },
-  {
-    path: '/logout',
-    component: Logout,
-  },
-
-  {
-    path: '/change-password',
-    component: ChangePassword,
-  },
-  {
-    path: '/personal-information',
-    component: PersonalInformation,
-  },
-  {
-    path: '/personal-preferences',
-    component: PersonalPreferences,
-  },
-  {
-    path: '/add',
-    component: Add,
-  },
-  {
-    path: '/contents',
-    component: Contents,
-  },
-  {
-    path: '/sharing',
-    component: Sharing,
-  },
-  {
-    path: '/**/add',
-    component: Add,
-  },
-  {
-    path: '/**/contents',
-    component: Contents,
-  },
-  {
-    path: '/**/sharing',
-    component: Sharing,
-  },
-  {
-    path: '/**/delete',
-    component: Delete,
-  },
-  {
-    path: '/**/diff',
-    component: Diff,
-  },
-  {
-    path: '/**/edit',
-    component: Edit,
-  },
-  {
-    path: '/**/history',
-    component: History,
-  },
-  {
-    path: '/**/layout',
-    component: Layout,
-  },
-  {
-    path: '/**/sharing',
-    component: Sharing,
-  },
-  {
-    path: '/register',
-    component: Register,
-  },
-  {
-    path: '/password-reset',
-    component: RequestPasswordReset,
-    routes: [
       {
-        path: '/password-reset/:token',
-        component: PasswordReset,
+        path: '*',
+        component: NotFound,
       },
     ],
-  },
-  {
-    path: '*',
-    component: NotFound,
   },
 ];
 
