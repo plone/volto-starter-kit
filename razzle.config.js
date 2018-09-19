@@ -55,6 +55,28 @@ module.exports = {
         },
       ],
     };
+
+    const SVGLOADER = {
+      test: /\.svg$/,
+      include: path.resolve(__dirname, './src/icons'),
+      use: [
+        {
+          loader: 'svg-loader',
+        },
+        {
+          loader: 'svgo-loader',
+          options: {
+            plugins: [
+              { removeTitle: true },
+              { convertPathData: false },
+              { removeUselessStrokeAndFill: true },
+              { removeViewBox: false },
+            ],
+          },
+        },
+      ],
+    };
+
     if (target === 'web') {
       config.plugins.unshift(
         new webpack.DefinePlugin({
@@ -74,11 +96,14 @@ module.exports = {
     }
 
     config.module.rules.push(LESSLOADER);
+    config.module.rules.push(SVGLOADER);
 
-    // Don't import config|variables|overrides) files with file-loader
+    // Don't load config|variables|overrides) files with file-loader
+    // Don't load SVGs from ./src/icons with file-loader
     const fileLoader = config.module.rules.find(fileLoaderFinder);
     fileLoader.exclude = [
       /\.(config|variables|overrides)$/,
+      path.join(__dirname, 'src', 'icons'),
       ...fileLoader.exclude,
     ];
 

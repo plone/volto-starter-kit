@@ -68,6 +68,9 @@
     "less-loader": "^4.1.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
-    "style-loader": "^0.23.0"
+    "style-loader": "^0.23.0",
+    "svg-loader": "0.0.2",
+    "svgo": "1.0.5",
+    "svgo-loader": "2.1.0"
   }
 }

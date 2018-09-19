@@ -16,6 +16,7 @@ const history = createBrowserHistory();
 const api = new Api();
 
 const store = configureStore(window.__PRELOADED_STATE__, history, api);
+persistAuthToken(store);
 
 hydrate(
   <Provider store={store}>

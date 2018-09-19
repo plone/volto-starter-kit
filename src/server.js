@@ -11,6 +11,8 @@ import { parse as parseUrl } from 'url';
 import { keys } from 'lodash';
 import Raven from 'raven';
 
+import userSession from './reducers/userSession/userSession';
+
 import cookie, { plugToRequest } from 'react-cookie';
 import ErrorPage from './error';
 
@@ -49,7 +51,12 @@ server
     )
       .best(supported)
       .toString();
+
+    const authToken = cookie.load('auth_token');
+
     const initialState = {
+      userSession: { ...userSession(), token: authToken },
+      form: req.body,
       intl: {
         defaultLocale: 'en',
         locale: lang,
@@ -62,6 +69,8 @@ server
 
     // Create a new Redux store instance
     const store = configureStore(initialState, history, api);
+
+    persistAuthToken(store);
 
     loadOnServer({ store, location, routes, api })
       .then(() => {
