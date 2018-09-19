@@ -43,41 +43,47 @@ const routes = [
   {
     path: '/',
     component: App,
-    exact: true,
-  },
-  {
-    path: '/login',
-    component: Login,
+    routes: [
+      {
+        path: '/controlpanel',
+        component: Controlpanels,
+        routes: [
+          {
+            path: '/controlpanel/moderate-comments',
+            component: ModerateComments,
+          },
+          {
+            path: '/controlpanel/users',
+            component: UsersControlpanel,
+          },
+          {
+            path: '/controlpanel/:id',
+            component: Controlpanel,
+          },
+        ],
+      },
+      {
+        path: '/login',
+        component: Login,
+      },
+      {
+        path: '/search',
+        component: Search,
+      },
+      {
+        path: '/**',
+        component: View,
+      },
+    ],
   },
   {
     path: '/logout',
     component: Logout,
   },
-  {
-    path: '/search',
-    component: Search,
-  },
+
   {
     path: '/change-password',
     component: ChangePassword,
-  },
-  {
-    path: '/controlpanel',
-    component: Controlpanels,
-    routes: [
-      {
-        path: '/controlpanel/moderate-comments',
-        component: ModerateComments,
-      },
-      {
-        path: '/controlpanel/users',
-        component: UsersControlpanel,
-      },
-      {
-        path: '/controlpanel/:id',
-        component: Controlpanel,
-      },
-    ],
   },
   {
     path: '/personal-information',
@@ -148,10 +154,6 @@ const routes = [
         component: PasswordReset,
       },
     ],
-  },
-  {
-    path: '/**',
-    component: View,
   },
   {
     path: '*',

@@ -1,7 +1,60 @@
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
+const fileLoaderFinder = makeLoaderFinder('file-loader');
+
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
-    // do something to config
+    const BASE_CSS_LOADER = {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 2,
+        sourceMap: true,
+        localIdentName: '[name]__[local]___[hash:base64:5]',
+      },
+    };
 
+    const POST_CSS_LOADER = {
+      loader: require.resolve('postcss-loader'),
+      options: {
+        // Necessary for external CSS imports to work
+        // https://github.com/facebookincubator/create-react-app/issues/2677
+        ident: 'postcss',
+        plugins: () => [
+          require('postcss-flexbugs-fixes'),
+          autoprefixer({
+            browsers: [
+              '>1%',
+              'last 4 versions',
+              'Firefox ESR',
+              'not ie < 9', // React doesn't support IE8 anyway
+            ],
+            flexbox: 'no-2009',
+          }),
+        ],
+      },
+    };
+    const LESSLOADER = {
+      test: /\.less$/,
+      include: [
+        path.resolve(__dirname, './theme'),
+        /node_modules\/semantic-ui-less/,
+      ],
+      use: [
+        {
+          loader: 'style-loader',
+        },
+        BASE_CSS_LOADER,
+        POST_CSS_LOADER,
+        {
+          loader: 'less-loader',
+          options: {
+            outputStyle: 'expanded',
+            sourceMap: true,
+          },
+        },
+      ],
+    };
     if (target === 'web') {
       config.plugins.unshift(
         new webpack.DefinePlugin({
@@ -19,6 +72,20 @@ module.exports = {
         }),
       );
     }
+
+    config.module.rules.push(LESSLOADER);
+
+    // Don't import config|variables|overrides) files with file-loader
+    const fileLoader = config.module.rules.find(fileLoaderFinder);
+    fileLoader.exclude = [
+      /\.(config|variables|overrides)$/,
+      ...fileLoader.exclude,
+    ];
+
+    config.resolve.alias['../../theme.config$'] = path.join(
+      __dirname,
+      './theme/site/theme.config',
+    );
 
     return config;
   },

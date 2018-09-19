@@ -9,6 +9,9 @@ import { Api, persistAuthToken } from './helpers';
 import { ReduxAsyncConnect } from 'redux-connect';
 import routes from './routes';
 
+import 'semantic-ui-less/semantic.less';
+import './static/overrides.css';
+
 const history = createBrowserHistory();
 const api = new Api();
 
@@ -22,7 +25,7 @@ hydrate(
       </BrowserRouter>
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root'),
+  document.getElementById('main'),
 );
 
 if (module.hot) {
