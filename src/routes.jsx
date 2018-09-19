@@ -45,21 +45,21 @@ const routes = [
     component: App,
     routes: [
       {
+        path: '/login',
+        component: Login,
+      },
+      {
+        path: '/logout',
+        component: Logout,
+      },
+      {
+        path: '/search',
+        component: Search,
+      },
+      {
         path: '/controlpanel',
         component: Controlpanels,
         routes: [
-          {
-            path: '/login',
-            component: Login,
-          },
-          {
-            path: '/logout',
-            component: Logout,
-          },
-          {
-            path: '/search',
-            component: Search,
-          },
           {
             path: '/controlpanel/moderate-comments',
             component: ModerateComments,
