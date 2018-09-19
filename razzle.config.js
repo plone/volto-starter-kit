@@ -9,7 +9,6 @@ module.exports = {
           __SERVER__: false,
         }),
       );
-      console.log(config.plugins);
     }
 
     if (target === 'node') {
