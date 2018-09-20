@@ -114,7 +114,7 @@ module.exports = {
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      '../../theme.config$': `${projectRootPath}/theme/site/theme.config`,
+      '../../theme.config$': `${projectRootPath}/theme/theme.config`,
       '@plone/plone-react': `${projectRootPath}/src/develop/plone-react/src/`,
     };
 
