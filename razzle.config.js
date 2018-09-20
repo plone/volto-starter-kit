@@ -3,6 +3,8 @@ const autoprefixer = require('autoprefixer');
 const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
 const fileLoaderFinder = makeLoaderFinder('file-loader');
 
+const projectRootPath = path.resolve(__dirname, './');
+
 module.exports = {
   modify: (config, { target, dev }, webpack) => {
     const BASE_CSS_LOADER = {
@@ -58,7 +60,10 @@ module.exports = {
 
     const SVGLOADER = {
       test: /\.svg$/,
-      include: path.resolve(__dirname, './src/icons'),
+      include: [
+        path.resolve(__dirname, './src/icons'),
+        /node_modules\/@plone\/plone-react\/src\/icons/,
+      ],
       use: [
         {
           loader: 'svg-loader',
@@ -107,10 +112,11 @@ module.exports = {
       ...fileLoader.exclude,
     ];
 
-    config.resolve.alias['../../theme.config$'] = path.join(
-      __dirname,
-      './theme/site/theme.config',
-    );
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '../../theme.config$': `${projectRootPath}/theme/site/theme.config`,
+      '@plone/plone-react': `${projectRootPath}/src/develop/plone-react/src/`,
+    };
 
     return config;
   },
