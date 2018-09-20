@@ -16,9 +16,9 @@ import defaultRoutes from '@plone/plone-react/routes';
 const routes = [
   {
     path: '/',
-    component: App,
+    component: App,     // Change this if you want a different component
     routes: [
-      // Place here your own custom routes
+      // Add your routes here
       ...defaultRoutes,
     ],
   },
