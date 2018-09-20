@@ -28,7 +28,7 @@ import nlLocale from '../dist/locales/nl.json';
 import deLocale from '../dist/locales/de.json';
 import enLocale from '../dist/locales/en.json';
 
-import configureStore from './store';
+import configureStore from '@plone/plone-react/store';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 

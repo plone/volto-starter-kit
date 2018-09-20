@@ -2,7 +2,7 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 import React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-intl-redux';
-import configureStore from './store';
+import configureStore from '@plone/plone-react/store';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import { Api, persistAuthToken } from '@plone/plone-react/helpers';
