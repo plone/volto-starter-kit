@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 
-import { api, crashReporter } from './middleware';
+import { api, crashReporter } from '@plone/plone-react/middleware';
 import reducers from './reducers';
 
 const configureStore = (initialState, history, apiHelper) => {

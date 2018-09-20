@@ -5,7 +5,7 @@ import { Provider } from 'react-intl-redux';
 import configureStore from './store';
 import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
-import { Api, persistAuthToken } from './helpers';
+import { Api, persistAuthToken } from '@plone/plone-react/helpers';
 import { ReduxAsyncConnect } from 'redux-connect';
 import nlLocaleData from 'react-intl/locale-data/nl';
 import deLocaleData from 'react-intl/locale-data/de';

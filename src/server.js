@@ -5,7 +5,12 @@ import express from 'express';
 import { renderToString } from 'react-dom/server';
 import { createMemoryHistory } from 'history';
 import { ReduxAsyncConnect, loadOnServer } from 'redux-connect';
-import { Html, Api, persistAuthToken, generateSitemap } from './helpers';
+import {
+  Html,
+  Api,
+  persistAuthToken,
+  generateSitemap,
+} from '@plone/plone-react/helpers';
 import { parse as parseUrl } from 'url';
 import { keys } from 'lodash';
 import Raven from 'raven';
@@ -13,12 +18,12 @@ import Raven from 'raven';
 import userSession from './reducers/userSession/userSession';
 
 import cookie, { plugToRequest } from 'react-cookie';
-import ErrorPage from './error';
+import ErrorPage from '@plone/plone-react/error';
 
 import locale from 'locale';
 
 import routes from './routes';
-import languages from './constants/Languages';
+import languages from '@plone/plone-react/constants/Languages';
 import nlLocale from '../dist/locales/nl.json';
 import deLocale from '../dist/locales/de.json';
 import enLocale from '../dist/locales/en.json';
