@@ -3,7 +3,6 @@ import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-intl-redux';
 import express from 'express';
 import { renderToString } from 'react-dom/server';
-import serialize from 'serialize-javascript';
 import { createMemoryHistory } from 'history';
 import { ReduxAsyncConnect, loadOnServer } from 'redux-connect';
 import { Html, Api, persistAuthToken, generateSitemap } from './helpers';
@@ -72,42 +71,53 @@ server
 
     persistAuthToken(store);
 
-    loadOnServer({ store, location, routes, api })
-      .then(() => {
-        const context = {};
-        const markup = renderToString(
-          <Provider store={store}>
-            <StaticRouter context={context} location={req.url}>
-              <ReduxAsyncConnect routes={routes} helpers={api} />
-            </StaticRouter>
-          </Provider>,
+    if (req.path === '/sitemap.xml.gz') {
+      generateSitemap(req).then(sitemap => {
+        res.header('Content-Type: application/x-gzip');
+        res.header('Content-Encoding: gzip');
+        res.header(
+          'Content-Disposition: attachment; filename="sitemap.xml.gz"',
         );
-
-        if (context.url) {
-          res.redirect(context.url);
-        } else {
-          res.status(200).send(
-            `<!doctype html>
-              ${renderToString(
-                <Html assets={assets} component={markup} store={store} />,
-              )}
-            `,
-          );
-        }
-      })
-      .catch(error => {
-        const errorPage = <ErrorPage message={error.message} />;
-
-        if (process.env.SENTRY_DSN) {
-          Raven.captureException(error.message, {
-            extra: JSON.stringify(error),
-          });
-        }
-        res.set({
-          'Cache-Control': 'public, max-age=60, no-transform',
-        });
-        res.status(500).send(`<!doctype html> ${renderToString(errorPage)}`);
+        res.send(sitemap);
       });
+    } else {
+      loadOnServer({ store, location, routes, api })
+        .then(() => {
+          const context = {};
+          const markup = renderToString(
+            <Provider store={store}>
+              <StaticRouter context={context} location={req.url}>
+                <ReduxAsyncConnect routes={routes} helpers={api} />
+              </StaticRouter>
+            </Provider>,
+          );
+
+          if (context.url) {
+            res.redirect(context.url);
+          } else {
+            res.status(200).send(
+              `<!doctype html>
+                ${renderToString(
+                  <Html assets={assets} component={markup} store={store} />,
+                )}
+              `,
+            );
+          }
+        })
+        .catch(error => {
+          const errorPage = <ErrorPage message={error.message} />;
+
+          if (process.env.SENTRY_DSN) {
+            Raven.captureException(error.message, {
+              extra: JSON.stringify(error),
+            });
+          }
+          res.set({
+            'Cache-Control': 'public, max-age=60, no-transform',
+          });
+          res.status(500).send(`<!doctype html> ${renderToString(errorPage)}`);
+        });
+    }
   });
 
 export default server;
