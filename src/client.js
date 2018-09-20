@@ -15,7 +15,6 @@ import { addLocaleData } from 'react-intl';
 import routes from './routes';
 
 import 'semantic-ui-less/semantic.less';
-import './static/overrides.css';
 
 const history = createBrowserHistory();
 const api = new Api();
