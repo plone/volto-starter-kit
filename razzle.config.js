@@ -2,6 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
 const fileLoaderFinder = makeLoaderFinder('file-loader');
+const eslintLoaderFinder = makeLoaderFinder('eslint-loader');
 
 const projectRootPath = path.resolve(__dirname, './');
 
@@ -111,6 +112,9 @@ module.exports = {
       path.join(__dirname, 'src', 'icons'),
       ...fileLoader.exclude,
     ];
+
+    const eslintLoader = config.module.rules.find(eslintLoaderFinder);
+    eslintLoader.exclude = [path.join(__dirname, 'src', 'develop')];
 
     config.resolve.alias = {
       ...config.resolve.alias,

@@ -1,7 +1,7 @@
 import { Separator } from 'draft-js-inline-toolbar-plugin';
 
 import createBlockBreakoutPlugin from 'draft-js-block-breakout-plugin';
-import createLinkPlugin from '../../components/manage/AnchorPlugin';
+import createLinkPlugin from '@plone/plone-react/components/manage/AnchorPlugin';
 import {
   BlockquoteButton,
   BoldButton,

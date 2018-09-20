@@ -1,15 +1,15 @@
 // The Widgets are forced to be imported not from the index but from its own
 // full path due to circular import issues
-import ArrayWidget from '../components/manage/Widgets/ArrayWidget';
-import CheckboxWidget from '../components/manage/Widgets/CheckboxWidget';
-import DatetimeWidget from '../components/manage/Widgets/DatetimeWidget';
-import FileWidget from '../components/manage/Widgets/FileWidget';
-import PasswordWidget from '../components/manage/Widgets/PasswordWidget';
-import SchemaWidget from '../components/manage/Widgets/SchemaWidget';
-import SelectWidget from '../components/manage/Widgets/SelectWidget';
-import TextareaWidget from '../components/manage/Widgets/TextareaWidget';
-import TextWidget from '../components/manage/Widgets/TextWidget';
-import WysiwygWidget from '../components/manage/Widgets/WysiwygWidget';
+import ArrayWidget from '@plone/plone-react/components/manage/Widgets/ArrayWidget';
+import CheckboxWidget from '@plone/plone-react/components/manage/Widgets/CheckboxWidget';
+import DatetimeWidget from '@plone/plone-react/components/manage/Widgets/DatetimeWidget';
+import FileWidget from '@plone/plone-react/components/manage/Widgets/FileWidget';
+import PasswordWidget from '@plone/plone-react/components/manage/Widgets/PasswordWidget';
+import SchemaWidget from '@plone/plone-react/components/manage/Widgets/SchemaWidget';
+import SelectWidget from '@plone/plone-react/components/manage/Widgets/SelectWidget';
+import TextareaWidget from '@plone/plone-react/components/manage/Widgets/TextareaWidget';
+import TextWidget from '@plone/plone-react/components/manage/Widgets/TextWidget';
+import WysiwygWidget from '@plone/plone-react/components/manage/Widgets/WysiwygWidget';
 
 // Widgets mapping
 export const widgetMapping = {

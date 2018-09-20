@@ -2,16 +2,16 @@ import React from 'react';
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
 import createBlockStyleButton from 'draft-js-buttons/lib/utils/createBlockStyleButton';
 
-import { Icon } from '../../components';
+import { Icon } from '@plone/plone-react/components';
 
-import boldSVG from '../../icons/bold.svg';
-import italicSVG from '../../icons/italic.svg';
-import textSVG from '../../icons/text.svg';
-import subtextSVG from '../../icons/subtext.svg';
-import unorderedListSVG from '../../icons/list-bullet.svg';
-import orderedListSVG from '../../icons/list-numbered.svg';
-import blockquoteSVG from '../../icons/quote.svg';
-import calloutSVG from '../../icons/megaphone.svg';
+import boldSVG from '@plone/plone-react/icons/bold.svg';
+import italicSVG from '@plone/plone-react/icons/italic.svg';
+import textSVG from '@plone/plone-react/icons/text.svg';
+import subtextSVG from '@plone/plone-react/icons/subtext.svg';
+import unorderedListSVG from '@plone/plone-react/icons/list-bullet.svg';
+import orderedListSVG from '@plone/plone-react/icons/list-numbered.svg';
+import blockquoteSVG from '@plone/plone-react/icons/quote.svg';
+import calloutSVG from '@plone/plone-react/icons/megaphone.svg';
 
 const BoldButton = createInlineStyleButton({
   style: 'BOLD',

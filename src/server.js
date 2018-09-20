@@ -15,7 +15,7 @@ import { parse as parseUrl } from 'url';
 import { keys } from 'lodash';
 import Raven from 'raven';
 
-import userSession from './reducers/userSession/userSession';
+import userSession from '@plone/plone-react/reducers/userSession/userSession';
 
 import cookie, { plugToRequest } from 'react-cookie';
 import ErrorPage from '@plone/plone-react/error';

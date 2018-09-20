@@ -6,7 +6,7 @@ import {
   EditTextTile,
   EditImageTile,
   EditVideoTile,
-} from '../components';
+} from '@plone/plone-react/components';
 
 const customTiles = [];
 

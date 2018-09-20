@@ -6,7 +6,7 @@ import {
   NewsItemView,
   SummaryView,
   TabularView,
-} from '../components';
+} from '@plone/plone-react/components';
 
 // Layout View Registry
 export const layoutViews = {
