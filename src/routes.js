@@ -2,7 +2,6 @@
  * Routes.
  * @module routes
  */
-import React from 'react';
 
 import { App } from '@plone/plone-react/components';
 
