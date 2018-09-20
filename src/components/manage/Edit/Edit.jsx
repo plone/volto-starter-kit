@@ -158,7 +158,9 @@ export class EditComponent extends Component {
       }
     }
     if (this.props.updateRequest.loading && nextProps.updateRequest.loaded) {
-      Router.push(this.props.returnUrl || getBaseUrl(this.props.pathname));
+      this.props.history.push(
+        this.props.returnUrl || getBaseUrl(this.props.pathname),
+      );
     }
   }
 
@@ -178,7 +180,9 @@ export class EditComponent extends Component {
    * @returns {undefined}
    */
   onCancel() {
-    Router.push(this.props.returnUrl || getBaseUrl(this.props.pathname));
+    this.props.history.push(
+      this.props.returnUrl || getBaseUrl(this.props.pathname),
+    );
   }
 
   /**
