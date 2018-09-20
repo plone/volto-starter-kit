@@ -1,3 +1,5 @@
-import client from '@plone/plone-react/client';
-
-client();
+/**
+ * Replace with custom client implementation when needed.
+ * @module client
+ */
+import '@plone/plone-react/client';
