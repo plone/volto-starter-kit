@@ -60,11 +60,7 @@ module.exports = {
     };
 
     const SVGLOADER = {
-      test: /\.svg$/,
-      include: [
-        path.resolve(__dirname, './src/icons'),
-        /node_modules\/@plone\/plone-react\/src\/icons/,
-      ],
+      test: /icons\/.*\.svg$/,
       use: [
         {
           loader: 'svg-loader',
@@ -109,7 +105,7 @@ module.exports = {
     const fileLoader = config.module.rules.find(fileLoaderFinder);
     fileLoader.exclude = [
       /\.(config|variables|overrides)$/,
-      path.join(__dirname, 'src', 'icons'),
+      /icons\/.*\.svg$/,
       ...fileLoader.exclude,
     ];
 
