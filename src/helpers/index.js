@@ -1,7 +1,6 @@
 /**
- * Point of contact for helper modules.
+ * Add your helpers here.
  * @module helpers
- * @example import { Api, Html } from 'helpers';
+ * @example
+ * export { Api } from './Api/Api';
  */
-
-// Place your own helpers here

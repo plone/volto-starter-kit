@@ -1,6 +1,6 @@
 /**
- * Action types.
+ * Add your action types here.
  * @module constants/ActionTypes
+ * @example
+ * export const UPDATE_CONTENT = 'UPDATE_CONTENT';
  */
-// Place your ActionTypes constants here like
-// export const UPDATE_CONTENT = 'UPDATE_CONTENT';

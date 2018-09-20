@@ -14,7 +14,7 @@ import defaultReducers from '@plone/plone-react/reducers';
  */
 const reducers = {
   ...defaultReducers,
-  // Place here your own local reducers
+  // Add your reducers here
 };
 
 export default reducers;
