@@ -1,6 +1,5 @@
 /**
- * Point of contact for component modules.
+ * Add your components here.
  * @module components
  * @example import { Field } from 'components';
  */
-// Place your own components here

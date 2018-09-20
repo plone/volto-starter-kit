@@ -1,7 +1,12 @@
 /**
- * Point of contact for action modules.
+ * Add your actions here.
  * @module actions
- * @example import { getSchema } from 'actions';
+ * @example
+ * import {
+ *   searchContent,
+ * } from './search/search';
+ *
+ * export {
+ *   searchContent,
+ * };
  */
-
-// Place your actions here
