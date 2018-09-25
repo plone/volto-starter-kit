@@ -1,3 +1,3 @@
 {
-  "extends": "./src/develop/plone-react/.eslintrc",
+  "extends": "./src/lib/plone-react/.eslintrc",
 }

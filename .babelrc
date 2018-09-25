@@ -1,5 +1,5 @@
 {
   "presets": [
-    "./src/develop/plone-react/babel"
+    "./src/lib/plone-react/babel"
   ]
 }

@@ -3,4 +3,4 @@
  * @module razzle.config
  */
 
-module.exports = require('./src/develop/plone-react/razzle.config');
+module.exports = require('./src/lib/plone-react/razzle.config');

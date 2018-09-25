@@ -856,6 +856,15 @@ babel-loader@7.1.4:
     loader-utils "^1.0.2"
     mkdirp "^0.5.1"
 
+babel-loader@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.0.2.tgz#2079b8ec1628284a929241da3d90f5b3de2a5ae5"
+  dependencies:
+    find-cache-dir "^1.0.0"
+    loader-utils "^1.0.2"
+    mkdirp "^0.5.1"
+    util.promisify "^1.0.0"
+
 babel-messages@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-messages/-/babel-messages-6.23.0.tgz#f3cdf4703858035b2a2951c6ec5edf6c62f2630e"
@@ -5543,9 +5552,9 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
-mr-developer@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mr-developer/-/mr-developer-1.1.0.tgz#42cddb9613d4ba67bf37301d038b2ef5d127c291"
+mr-developer@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/mr-developer/-/mr-developer-1.2.0.tgz#bd71f10dec83b1962873f33d622238ba9489fe9d"
   dependencies:
     colors "~1.2.1"
     nodegit "~0.21.2"

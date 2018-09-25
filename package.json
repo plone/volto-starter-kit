@@ -7,9 +7,10 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "develop": "mrdeveloper --config=jsconfig.json"
+    "develop": "mrdeveloper --no-config --output=lib"
   },
   "dependencies": {
+    "babel-loader": "^8.0.2",
     "connected-react-router": "^4.4.1",
     "draft-js": "^0.10.5",
     "draft-js-block-breakout-plugin": "^2.0.1",
@@ -70,7 +71,7 @@
     "eslint-plugin-prettier": "2.6.0",
     "less": "2.7.3",
     "less-loader": "^4.1.0",
-    "mr-developer": "^1.1.0",
+    "mr-developer": "1.2.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "prettier": "1.11.1",
