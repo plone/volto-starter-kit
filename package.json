@@ -114,5 +114,6 @@
     "setupFiles": [
       "./src/lib/plone-react/test-setup.js"
     ]
-  }
+  },
+  "customizations": {}
 }
