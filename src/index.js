@@ -3,4 +3,6 @@
  * @module index
  */
 
-import '@plone/plone-react';
+import server from '@plone/plone-react';
+
+server();
