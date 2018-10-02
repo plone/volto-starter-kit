@@ -4,7 +4,7 @@
  */
 
 import { App } from '@plone/plone-react/components';
-import defaultRoutes from '@plone/plone-react/routes';
+import { defaultRoutes } from '@plone/plone-react/routes';
 
 /**
  * Routes array.
