@@ -3,6 +3,6 @@
  * @module client
  */
 
-import client from '@plone/plone-react/client';
+import client from '@plone/plone-react/start-client';
 
 client();
