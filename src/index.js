@@ -3,6 +3,6 @@
  * @module index
  */
 
-import server from '@plone/plone-react';
+import start from '@plone/plone-react/start';
 
-server();
+start();
