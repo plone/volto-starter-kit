@@ -1,13 +1,49 @@
 {
-  "name": "my-razzle-app",
-  "version": "2.0.0-alpha.8",
+  "name": "volto-boilerplate",
+  "description": "Boilerplate for Volto",
   "license": "MIT",
+  "version": "0.0.1-alpha",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
     "develop": "mrdeveloper --no-config --output=lib"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.js(x)?$": "babel-jest",
+      "^.+\\.css$": "jest-css-modules",
+      "^.+\\.scss$": "jest-css-modules",
+      "^.+\\.(png)$": "jest-file",
+      "^.+\\.(svg)$": "./src/lib/plone-react/jest-svgsystem-transform.js"
+    },
+    "moduleNameMapper": {
+      "@plone/plone-react/(.*)$": "<rootDir>/src/lib/plone-react/src/$1",
+      "~/config": "<rootDir>/src/config"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 10,
+        "functions": 10,
+        "lines": 10,
+        "statements": 10
+      }
+    },
+    "setupFiles": [
+      "./src/lib/plone-react/test-setup.js"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
+  "customizations": {},
+  "engines": {
+    "node": "~8.11.3"
   },
   "dependencies": {
     "babel-loader": "8.0.2",
@@ -56,10 +92,6 @@
     "superagent": "4.0.0-beta.5",
     "tlds": "1.203.1"
   },
-  "prettier": {
-    "trailingComma": "all",
-    "singleQuote": true
-  },
   "devDependencies": {
     "autoprefixer": "9.1.5",
     "babel-loader": "8.0.2",
@@ -88,33 +120,5 @@
     "svg-loader": "0.0.2",
     "svgo": "1.0.5",
     "svgo-loader": "2.1.0"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "transform": {
-      "^.+\\.js(x)?$": "babel-jest",
-      "^.+\\.css$": "jest-css-modules",
-      "^.+\\.scss$": "jest-css-modules",
-      "^.+\\.(png)$": "jest-file",
-      "^.+\\.(svg)$": "./src/lib/plone-react/jest-svgsystem-transform.js"
-    },
-    "moduleNameMapper": {
-      "@plone/plone-react/(.*)$": "<rootDir>/src/lib/plone-react/src/$1",
-      "~/config": "<rootDir>/src/config"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 10,
-        "functions": 10,
-        "lines": 10,
-        "statements": 10
-      }
-    },
-    "setupFiles": [
-      "./src/lib/plone-react/test-setup.js"
-    ]
-  },
-  "customizations": {}
+  }
 }
