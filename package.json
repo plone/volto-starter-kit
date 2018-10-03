@@ -8,8 +8,7 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "develop": "mrdeveloper --no-config --output=lib",
-    "i18n": "NODE_ENV=production node src/lib/plone-react/src/i18n.js"
+    "i18n": "NODE_ENV=production node node_modules/@plone/plone-react/src/i18n.js"
   },
   "jest": {
     "snapshotSerializers": [
@@ -20,10 +19,10 @@
       "^.+\\.css$": "jest-css-modules",
       "^.+\\.scss$": "jest-css-modules",
       "^.+\\.(png)$": "jest-file",
-      "^.+\\.(svg)$": "./src/lib/plone-react/jest-svgsystem-transform.js"
+      "^.+\\.(svg)$": "./node_modules/@plone/plone-react/jest-svgsystem-transform.js"
     },
     "moduleNameMapper": {
-      "@plone/plone-react/(.*)$": "<rootDir>/src/lib/plone-react/src/$1",
+      "@plone/plone-react/(.*)$": "<rootDir>/node_modules/@plone/plone-react/src/$1",
       "~/config": "<rootDir>/src/config"
     },
     "coverageThreshold": {
@@ -35,7 +34,7 @@
       }
     },
     "setupFiles": [
-      "./src/lib/plone-react/test-setup.js"
+      "./node_modules/@plone/plone-react/test-setup.js"
     ]
   },
   "prettier": {
@@ -47,6 +46,7 @@
     "node": "~8.11.3"
   },
   "dependencies": {
+    "@plone/plone-react": "0.8.1",
     "babel-core": "6.26.3",
     "babel-loader": "8.0.2",
     "connected-react-router": "4.4.1",
@@ -117,7 +117,6 @@
     "jest-file": "1.0.0",
     "less": "2.7.3",
     "less-loader": "4.1.0",
-    "mr-developer": "1.2.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "prettier": "1.14.3",

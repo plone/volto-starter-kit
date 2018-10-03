@@ -1,7 +1,0 @@
-{
-  "plone-react": {
-    "package": "@plone/plone-react",
-    "url": "https://github.com/plone/plone-react.git",
-    "branch": "master"
-  }
-}
