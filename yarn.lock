@@ -98,9 +98,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@plone/plone-react@0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@plone/plone-react/-/plone-react-0.8.2.tgz#c9d6e58f95555cf027b94d8fc56659afc37dde8d"
+"@plone/plone-react@0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@plone/plone-react/-/plone-react-0.8.3.tgz#a22c740063cf3e3fcd3e85d21c2e0682a6fc7589"
   dependencies:
     autoprefixer "9.1.5"
     babel-core "6.26.3"
