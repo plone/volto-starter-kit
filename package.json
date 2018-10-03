@@ -8,7 +8,8 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "develop": "mrdeveloper --no-config --output=lib"
+    "develop": "mrdeveloper --no-config --output=lib",
+    "i18n": "NODE_ENV=production node src/lib/plone-react/src/i18n.js"
   },
   "jest": {
     "snapshotSerializers": [
