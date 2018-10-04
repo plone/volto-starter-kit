@@ -17,7 +17,7 @@ import {
   views as defaultViews,
   widgets as defaultWidgets,
   tiles as defaultTiles,
-} from '@plone/plone-react/config';
+} from '@plone/volto/config';
 
 export const settings = {
   ...defaultSettings,

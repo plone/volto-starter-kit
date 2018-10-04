@@ -3,4 +3,4 @@
  * @module razzle.config
  */
 
-module.exports = require('./node_modules/@plone/plone-react/razzle.config');
+module.exports = require('./node_modules/@plone/volto/razzle.config');

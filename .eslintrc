@@ -1,3 +1,3 @@
 {
-  "extends": "./node_modules/@plone/plone-react/.eslintrc"
+  "extends": "./node_modules/@plone/volto/.eslintrc"
 }

@@ -8,7 +8,7 @@
     "build": "razzle build",
     "test": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
-    "i18n": "NODE_ENV=production node node_modules/@plone/plone-react/src/i18n.js"
+    "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js"
   },
   "jest": {
     "snapshotSerializers": [
@@ -19,10 +19,10 @@
       "^.+\\.css$": "jest-css-modules",
       "^.+\\.scss$": "jest-css-modules",
       "^.+\\.(png)$": "jest-file",
-      "^.+\\.(svg)$": "./node_modules/@plone/plone-react/jest-svgsystem-transform.js"
+      "^.+\\.(svg)$": "./node_modules/@plone/volto/jest-svgsystem-transform.js"
     },
     "moduleNameMapper": {
-      "@plone/plone-react/(.*)$": "<rootDir>/node_modules/@plone/plone-react/src/$1",
+      "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "~/config": "<rootDir>/src/config"
     },
     "coverageThreshold": {
@@ -34,7 +34,7 @@
       }
     },
     "setupFiles": [
-      "./node_modules/@plone/plone-react/test-setup.js"
+      "./node_modules/@plone/volto/test-setup.js"
     ]
   },
   "prettier": {
@@ -46,6 +46,6 @@
     "node": "~8.11.3"
   },
   "dependencies": {
-    "@plone/plone-react": "0.8.3"
+    "@plone/volto": "0.9.0"
   }
 }

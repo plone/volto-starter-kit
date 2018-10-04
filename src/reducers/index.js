@@ -3,7 +3,7 @@
  * @module reducers/root
  */
 
-import defaultReducers from '@plone/plone-react/reducers';
+import defaultReducers from '@plone/volto/reducers';
 
 /**
  * Root reducer.

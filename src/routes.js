@@ -3,8 +3,8 @@
  * @module routes
  */
 
-import { App } from '@plone/plone-react/components';
-import { defaultRoutes } from '@plone/plone-react/routes';
+import { App } from '@plone/volto/components';
+import { defaultRoutes } from '@plone/volto/routes';
 
 /**
  * Routes array.

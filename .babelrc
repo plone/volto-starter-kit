@@ -1,3 +1,3 @@
 {
-  "presets": ["./node_modules/@plone/plone-react/babel"]
+  "presets": ["./node_modules/@plone/volto/babel"]
 }
