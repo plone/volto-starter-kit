@@ -23,7 +23,7 @@
     },
     "moduleNameMapper": {
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
-      "~/config": "<rootDir>/src/config"
+      "~/(.*)$": "<rootDir>/src/$1"
     },
     "coverageThreshold": {
       "global": {
@@ -41,11 +41,10 @@
     "trailingComma": "all",
     "singleQuote": true
   },
-  "customizations": {},
   "engines": {
     "node": "~8.11.3"
   },
   "dependencies": {
-    "@plone/volto": "0.9.0"
+    "@plone/volto": "0.9.4"
   }
 }
