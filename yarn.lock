@@ -98,9 +98,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@plone/volto@0.9.4":
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-0.9.4.tgz#76d964ae091adc1bf41087ae4a071c113a96ada2"
+"@plone/volto@0.9.5":
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/@plone/volto/-/volto-0.9.5.tgz#9447cad9bde6071fa7819e8037080e8690ca1326"
   dependencies:
     autoprefixer "9.1.5"
     babel-core "6.26.3"

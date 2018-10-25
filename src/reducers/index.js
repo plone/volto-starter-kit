@@ -5,6 +5,8 @@
 
 import defaultReducers from '@plone/volto/reducers';
 
+import faq from './faq/faq';
+
 /**
  * Root reducer.
  * @function
@@ -14,7 +16,7 @@ import defaultReducers from '@plone/volto/reducers';
  */
 const reducers = {
   ...defaultReducers,
-  // Add your reducers here
+  faq,
 };
 
 export default reducers;

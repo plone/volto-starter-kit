@@ -30,4 +30,22 @@ msgstr ""
 "Language-Name: Nederlands\n"
 "Preferred-Encodings: utf-8\n"
 
+#: customizations/components/theme/Logo/Logo
+#: customizations/components/theme/Logo/Logoadf
+#: customizations/theme/Logo/Logo
+msgid "Plone Site"
+msgstr ""
 
+#: customizations/components/theme/Tags/Tags
+msgid "Search for tag {tag}"
+msgstr "Zoeken naar label {tag}"
+
+#: customizations/components/theme/Logo/Logo
+#: customizations/components/theme/Logo/Logoadf
+#: customizations/theme/Logo/Logo
+msgid "Site"
+msgstr ""
+
+#: customizations/components/theme/Tags/Tags
+msgid "Tags"
+msgstr "Labels"

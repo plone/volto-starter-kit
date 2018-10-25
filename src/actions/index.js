@@ -10,3 +10,7 @@
  *   searchContent,
  * };
  */
+
+import { getFaq } from './faq/faq';
+
+export { getFaq };

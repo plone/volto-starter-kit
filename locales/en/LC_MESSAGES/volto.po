@@ -11,4 +11,22 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: customizations/components/theme/Logo/Logo
+#: customizations/components/theme/Logo/Logoadf
+#: customizations/theme/Logo/Logo
+msgid "Plone Site"
+msgstr ""
 
+#: customizations/components/theme/Tags/Tags
+msgid "Search for tag {tag}"
+msgstr ""
+
+#: customizations/components/theme/Logo/Logo
+#: customizations/components/theme/Logo/Logoadf
+#: customizations/theme/Logo/Logo
+msgid "Site"
+msgstr ""
+
+#: customizations/components/theme/Tags/Tags
+msgid "Tags"
+msgstr ""
