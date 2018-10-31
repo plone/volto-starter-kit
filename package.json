@@ -45,6 +45,6 @@
     "node": "~8.11.3"
   },
   "dependencies": {
-    "@plone/volto": "0.9.5"
+    "@plone/volto": "1.0.0"
   }
 }
