@@ -5,4 +5,8 @@
 
 import start from '@plone/volto/start-server';
 
-start();
+const reloadServer = start();
+
+if (module.hot) {
+  reloadServer();
+}
