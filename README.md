@@ -35,3 +35,18 @@ By default, runs tests related to files changed since the last commit.
 
 Runs the test i18n runner which extracts all the translation strings and
 generates the needed files.
+
+
+### mr_developer
+
+[mr_developer](https://www.npmjs.com/package/mr-developer) is a great tool
+for developing multiple packages at the same time.
+
+mr_developer should work with this project by using the `--config` config option:
+
+```bash
+mrdeveloper --config=jsconfig.json
+```
+
+Volto's latest razzle config will pay attention to your jsconfig.json file
+for any customizations.
