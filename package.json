@@ -19,10 +19,15 @@
       "^.+\\.css$": "jest-css-modules",
       "^.+\\.scss$": "jest-css-modules",
       "^.+\\.(png)$": "jest-file",
+      "^.+\\.(jpg)$": "jest-file",
       "^.+\\.(svg)$": "./node_modules/@plone/volto/jest-svgsystem-transform.js"
     },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@plone/volto).+\\.js$"
+    ],
     "moduleNameMapper": {
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
+      "@package/(.*)$": "<rootDir>/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
     },
     "coverageThreshold": {
@@ -34,7 +39,7 @@
       }
     },
     "setupFiles": [
-      "./node_modules/@plone/volto/test-setup.js"
+      "@plone/volto/test-setup.js"
     ]
   },
   "prettier": {
@@ -42,7 +47,7 @@
     "singleQuote": true
   },
   "engines": {
-    "node": "~10.14.2"
+    "node": "^8 || ^10"
   },
   "dependencies": {
     "@plone/volto": "1.2.0"
