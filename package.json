@@ -50,6 +50,6 @@
     "node": "^8 || ^10"
   },
   "dependencies": {
-    "@plone/volto": "1.2.0"
+    "@plone/volto": "1.2.1"
   }
 }
