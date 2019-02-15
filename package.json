@@ -46,6 +46,13 @@
     "trailingComma": "all",
     "singleQuote": true
   },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-idiomatic-order",
+      "./node_modules/prettier-stylelint/config.js"
+    ]
+  },
   "engines": {
     "node": "^8 || ^10"
   },
