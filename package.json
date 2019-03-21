@@ -2,7 +2,7 @@
   "name": "volto-starter-kit",
   "description": "Volto Starter Kit",
   "license": "MIT",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
@@ -57,6 +57,6 @@
     "node": "^8 || ^10"
   },
   "dependencies": {
-    "@plone/volto": "1.8.1"
+    "@plone/volto": "1.8.2"
   }
 }
