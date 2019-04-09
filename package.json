@@ -6,7 +6,7 @@
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
-    "test": "razzle test --env=jsdom",
+    "test": "razzle test --env=jsdom --passWithNoTests",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js"
   },
