@@ -58,5 +58,10 @@
   },
   "dependencies": {
     "@plone/volto": "3.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "3.0.1",
+    "prettier": "1.17.0",
+    "prettier-stylelint": "0.4.2"
   }
 }
