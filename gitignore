@@ -1,3 +1,4 @@
+.vscode/
 logs
 *.log
 npm-debug.log*
@@ -12,3 +13,4 @@ build
 .env.production.local
 
 data
+omelette
