@@ -16,7 +16,7 @@ import {
   settings as defaultSettings,
   views as defaultViews,
   widgets as defaultWidgets,
-  tiles as defaultTiles,
+  blocks as defaultBlocks,
 } from '@plone/volto/config';
 
 export const settings = {
@@ -31,6 +31,6 @@ export const widgets = {
   ...defaultWidgets,
 };
 
-export const tiles = {
-  ...defaultTiles,
+export const blocks = {
+  ...defaultBlocks,
 };
