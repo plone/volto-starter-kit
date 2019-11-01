@@ -13,9 +13,6 @@
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
     "transform": {
       "^.+\\.js(x)?$": "babel-jest",
       "^.+\\.css$": "jest-css-modules",
