@@ -2,17 +2,21 @@
   "name": "volto-starter-kit",
   "description": "Volto Starter Kit",
   "license": "MIT",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "scripts": {
     "start": "razzle start",
-    "postinstall": "yarn omelette",
+    "postinstall": "yarn omelette && yarn patches",
     "omelette": "ln -sf node_modules/@plone/volto/ omelette",
+    "patches": "/bin/bash patches/patchit.sh > /dev/null 2>&1 ||true",
     "build": "razzle build",
     "test": "razzle test --env=jsdom --passWithNoTests",
     "start:prod": "NODE_ENV=production node build/server.js",
     "i18n": "NODE_ENV=production node node_modules/@plone/volto/src/i18n.js"
   },
   "jest": {
+    "modulePathIgnorePatterns": [
+      "api"
+    ],
     "transform": {
       "^.+\\.js(x)?$": "babel-jest",
       "^.+\\.css$": "jest-css-modules",
@@ -83,7 +87,7 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "4.0.0"
+    "@plone/volto": "5.0.0"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "3.1.2",
