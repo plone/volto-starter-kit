@@ -29,6 +29,7 @@
       "/node_modules/(?!@plone/volto).+\\.js$"
     ],
     "moduleNameMapper": {
+      "@plone/volto/babel": "<rootDir>/node_modules/@plone/volto/babel",
       "@plone/volto/(.*)$": "<rootDir>/node_modules/@plone/volto/src/$1",
       "@package/(.*)$": "<rootDir>/src/$1",
       "~/(.*)$": "<rootDir>/src/$1"
@@ -87,16 +88,14 @@
     "node": "^10 || ^12"
   },
   "dependencies": {
-    "@plone/volto": "5.0.0"
+    "@plone/volto": "plone/volto#a21c120089d59e8312e210489df7e8df61ad5e7c"
   },
   "devDependencies": {
-    "eslint-plugin-prettier": "3.1.2",
-    "prettier": "1.19.1",
-    "stylelint-config-idiomatic-order": "7.0.3",
-    "stylelint-config-prettier": "6.0.0",
-    "stylelint-prettier": "1.1.1"
-  },
-  "resolutions": {
-    "@plone/volto/razzle/webpack-dev-server": "3.2.0"
+    "eslint-plugin-prettier": "3.1.3",
+    "prettier": "2.0.5",
+    "stylelint": "13.3.3",
+    "stylelint-config-idiomatic-order": "8.1.0",
+    "stylelint-config-prettier": "8.0.1",
+    "stylelint-prettier": "1.1.2"
   }
 }
