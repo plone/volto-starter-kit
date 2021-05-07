@@ -1,3 +1,13 @@
+# Deprecation notice
+
+This project is deprecated in favor of the Yeoman-based Volto project generator:
+
+https://github.com/plone/volto/tree/master/packages/generator-volto
+
+Please also refer to the new documentation in:
+
+https://docs.voltocms.com
+
 ## Documentation
 
 A training on how to create your own website using Volto is available as part of the Plone training at [https://training.plone.org/5/volto/index.html](https://training.plone.org/5/volto/index.html).
